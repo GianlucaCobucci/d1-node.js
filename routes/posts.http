@@ -1,0 +1,13 @@
+GET http://localhost:5050/users
+
+#######
+
+POST http://localhost:5050/posts/new HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Titolo1",
+  "content": "ciao a tutti post di prova",
+  "author": "Gianluca",
+  "rate" : 5
+}

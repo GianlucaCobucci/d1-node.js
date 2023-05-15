@@ -1,0 +1,36 @@
+GET http://localhost:5050/users
+
+
+#######
+
+
+POST http://localhost:5050/users/new HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "wwww",
+  "lastName": "22222",
+  "email": "gianlucacobucci330@gmail.com",
+  "password" : "drgdrvdr",
+  "age": 30
+}
+
+
+#######
+
+
+PATCH http://localhost:5050/users/64627fabaadebe31e8b6a4e8 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Carlo",
+  "lastName": "Colia",
+  "email": "pippo@gmail.com",
+  "password" : "mamamama",
+  "age": 87
+}
+
+#######
+
+
+DELETE  http://localhost:5050/users/delete/646280f2aadebe31e8b6a4ed
