@@ -6,8 +6,25 @@ POST http://localhost:5050/posts/new HTTP/1.1
 content-type: application/json
 
 {
-  "title": "Titolo1",
-  "content": "ciao a tutti post di prova",
-  "author": "Gianluca",
-  "rate" : 5
+  "title": "prova 4",
+  "content": "4",
+  "author": "4",
+  "rate" : 4
 }
+
+#######
+
+PATCH http://localhost:5050/posts/646385f3e1a7a02ac3965aac HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Carlo",
+  "content": "Colia",
+  "author": "pippo@gmail.com",
+  "rate": 2
+}
+
+#######
+
+DELETE  http://localhost:5050/posts/delete/6463861ee1a7a02ac3965ab2
+

@@ -4,7 +4,7 @@ const usersModel = require('../models/users')
 
 router.get('/users', async (req, res) => {
     try {
-        const users = await usersModel.find();
+        const users = await usersModel.find(); //attendi che siano disponibili tutti gli utenti dal database
         res.status(200).send(users)
     } catch (error) {
         res.status(500).send({message: "Errore interno server"})
@@ -63,11 +63,9 @@ router.patch('/users/:id', async(req, res) => {
 router.delete('/users/delete/:id', async(req, res) => {
     const {id} = req.params;
     
-
     try {
         const user = await usersModel.findByIdAndDelete(id);
 
-             
         if (!user) {
             return res.status(404).send({
                 message: "Attenzione nessun utente con questo id"

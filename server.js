@@ -10,31 +10,17 @@ const app = express() /* tutti i metodi di express sono dentro app */
 const usersRoute = require('./routes/users')
 const postsRoute = require('./routes/posts')
 
-
-
-//middleware
+//middleware per leggere body in formato json
 app.use(express.json())
-
 
 //routes
 app.use('/', usersRoute)
 app.use('/', postsRoute)
 
 
-
-/* app.get('/users', (req, res) => {//primo parametro path, ovvero indirizzo
-    res.status(200).send({
-        firstname: 'Gianluca',
-        lastName: 'Cobucci',
-        age: 30,
-    })
-}) 
-//https://localhost:5050/users */
-
-
 mongoose.connect('mongodb+srv://gianlucacobucci330:Y9H4sZY8ZgEzoBvu@cluster0.66aycqq.mongodb.net/', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    useNewUrlParser: true, /* oggetto di configurazione obbligatorio */
+    useUnifiedTopology: true /* oggetto di configurazione obbligatorio */
 })
 
 const db = mongoose.connection;
